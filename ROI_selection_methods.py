@@ -19,10 +19,11 @@ def select_pixels_in_polygon(image_array, polygon_vertices):
     return selected_pixels
 
 
-def mask_out_face(image,landmarks,blood_flow_regions=True):
+def mask_out_face(image,points,blood_flow_regions=True):
 
-        points = [(int(landmark.x * image.shape[1]), int(landmark.y * image.shape[0])) for landmark in landmarks.landmark]
-        blood_flow_points=[357,452,451,450,449,448,346,280,425,266,371,355]
+        #points = [(int(landmark.x * image.shape[1]), int(landmark.y * image.shape[0])) for landmark in landmarks.landmark]
+        #blood_flow_points=[357,452,451,450,449,448,346,280,425,266,371,355]
+        blood_flow_points=[69,108,151,337,299,296,107,9,66]
         pointsbf=[points[i] for i in blood_flow_points]
             
         mask = np.zeros(image.shape[:2], dtype=np.uint8)
